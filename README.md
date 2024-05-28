@@ -7,7 +7,7 @@
 To install the `useScrollLock` hook, use the following command:
 
 ```shell
-npm install @yoojinyoung/useScrollLock
+npm install @yoojinyoung/usescrolllock
 ```
 
 ## Usage
