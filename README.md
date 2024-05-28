@@ -1,8 +1,6 @@
 # useScrollLock
 
-**A simple react hook for scroll lock**
-
----
+**A super simple react hook for scroll lock 🔒**
 
 ## Installation
 
@@ -52,3 +50,9 @@ function SomeComponent()  {
   );
 }
 ```
+
+## API
+
+1. `lock`: (id?: string) => void
+2. `release`: (id: string) => void
+3. `isScrollLocked`: boolean
