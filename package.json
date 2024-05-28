@@ -1,7 +1,7 @@
 {
   "name": "@yoojinyoung/usescrolllock",
   "version": "1.0.2",
-  "description": "useScrollLock is a React hook for scroll lock",
+  "description": "useScrollLock is a super simple React hook for scroll lock 🔒",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -12,7 +12,7 @@
     "prepare": "npm run build"
   },
   "keywords": [
-    "scroll lock",
+    "scrolllock",
     "react",
     "react-hook",
     "react-scrolllock",
