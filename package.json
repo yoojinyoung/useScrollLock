@@ -1,14 +1,28 @@
 {
   "name": "usescrolllock",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "useScrollLock is a React hook for scroll lock",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "scroll lock",
+    "react",
+    "react-hook",
+    "react-scrolllock",
+    "useScrollLock",
+    "usescrolllock"
+  ],
+  "author": {
+    "name": "Jin Young, Yoo",
+    "email": "yoojinyoung@kakao.com"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.3.1",
     "react": "^18.3.1",
