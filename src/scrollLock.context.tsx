@@ -9,7 +9,7 @@ import React, {
 
 type ScrollLockContext = {
   lock: (id?: string) => void;
-  release: (id: string) => void;
+  release: (id?: string) => void;
   isScrollLocked: boolean;
 };
 
@@ -64,9 +64,9 @@ export function ScrollLockProvider({ children }: PropsWithChildren<{}>) {
 
         return id;
       },
-      release: (id: string) => {
-        setScrollLockerIds((prev) =>
-          prev.filter((scrollLocker) => scrollLocker !== id)
+      release: (id?: string) => {
+        setScrollLockerIds(
+          id ? (prev) => prev.filter((scrollLocker) => scrollLocker !== id) : []
         );
       },
       isScrollLocked,
