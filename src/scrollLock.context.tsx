@@ -58,7 +58,7 @@ export function ScrollLockProvider({ children }: PropsWithChildren<{}>) {
   const value = useMemo(
     () => ({
       lock: (id?: string) => {
-        id = id || nanoid();
+        id = id || crypto.randomUUID();
         setScrollLockerIds((prev) => [...prev, id as string]);
 
         return id;
