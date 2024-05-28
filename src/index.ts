@@ -1,2 +1,1 @@
-export { ScrollLockProvider } from "./scrollLock.context";
-export { default } from "./useScrollLock";
+export { ScrollLockProvider, useScrollLock } from "./scrollLock.context";

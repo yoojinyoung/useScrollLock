@@ -1,6 +1,7 @@
 import React, {
   PropsWithChildren,
   createContext,
+  useContext,
   useEffect,
   useMemo,
   useState,
@@ -78,4 +79,8 @@ export function ScrollLockProvider({ children }: PropsWithChildren<{}>) {
       {children}
     </ScrollLockContext.Provider>
   );
+}
+
+export function useScrollLock() {
+  return useContext(ScrollLockContext);
 }
