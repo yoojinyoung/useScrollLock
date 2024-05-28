@@ -8,7 +8,6 @@ export const ScrollLockContext = createContext(initialContextValue);
 export function ScrollLockProvider({ children }) {
     const [scrollLockerIds, setScrollLockerIds] = useState([]);
     const lock = () => {
-        console.log("lock");
         const scrollY = window.scrollY;
         document.body.style.position = "fixed";
         document.body.style.width = "100%";
