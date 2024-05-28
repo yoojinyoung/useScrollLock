@@ -1,0 +1,54 @@
+# useScrollLock
+
+**A simple react hook for scroll lock**
+
+---
+
+## Installation
+
+```shell
+npm install @yoojinyoung/useScrollLock
+```
+
+## Usage
+
+You should follow these two steps.
+
+1. Wrap your application with `ScrollLockProvider`.
+2. Use `useScrollLock` in component.
+
+```jsx
+// App.jsx
+import { ScrollLockProvider } from "@yoojinyoung/usescrolllock"
+
+function App()  {
+  return (
+    <ScrollLockProvider>
+      <... />
+    </ScrollLockProvider>
+  );
+}
+```
+
+```jsx
+// SomeComponent.jsx
+import useScrollLock from "@yoojinyoung/usescrolllock"
+
+function SomeComponent()  {
+  const { lock, release, isScrollLocked } = useScrollLock();
+
+  useEffect(() => {
+    const lockerId = lock()
+
+    return () => {
+      release(lockerId)
+    }
+  }, [])
+
+  console.log(isScrollLocked)
+
+  return (
+    <.../>
+  );
+}
+```
