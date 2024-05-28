@@ -1,16 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScrollLockProvider = exports.ScrollLockContext = void 0;
-const react_1 = require("react");
+import React, { createContext, useEffect, useMemo, useState, } from "react";
 const initialContextValue = {
     lock: () => { },
     release: () => { },
     isScrollLocked: false,
 };
-exports.ScrollLockContext = (0, react_1.createContext)(initialContextValue);
-function ScrollLockProvider({ children }) {
-    const [scrollLockerIds, setScrollLockerIds] = (0, react_1.useState)([]);
+export const ScrollLockContext = createContext(initialContextValue);
+export function ScrollLockProvider({ children }) {
+    const [scrollLockerIds, setScrollLockerIds] = useState([]);
     const lock = () => {
+        console.log("lock");
         const scrollY = window.scrollY;
         document.body.style.position = "fixed";
         document.body.style.width = "100%";
@@ -27,8 +25,8 @@ function ScrollLockProvider({ children }) {
             top: parseInt(scrollY || "0") * -1,
         });
     };
-    const isScrollLocked = (0, react_1.useMemo)(() => scrollLockerIds.length > 0, [scrollLockerIds]);
-    (0, react_1.useEffect)(() => {
+    const isScrollLocked = useMemo(() => scrollLockerIds.length > 0, [scrollLockerIds]);
+    useEffect(() => {
         if (isScrollLocked) {
             lock();
         }
@@ -36,7 +34,7 @@ function ScrollLockProvider({ children }) {
             release();
         }
     }, [isScrollLocked]);
-    const value = (0, react_1.useMemo)(() => ({
+    const value = useMemo(() => ({
         lock: (id) => {
             id = id || crypto.randomUUID();
             setScrollLockerIds((prev) => [...prev, id]);
@@ -47,9 +45,6 @@ function ScrollLockProvider({ children }) {
         },
         isScrollLocked,
     }), [isScrollLocked]);
-    return (<exports.ScrollLockContext.Provider value={value}>
-      {children}
-    </exports.ScrollLockContext.Provider>);
+    return (React.createElement(ScrollLockContext.Provider, { value: value }, children));
 }
-exports.ScrollLockProvider = ScrollLockProvider;
-//# sourceMappingURL=scrollLock.context.jsx.map
+//# sourceMappingURL=scrollLock.context.js.map
