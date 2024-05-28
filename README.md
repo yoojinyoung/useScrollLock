@@ -23,7 +23,7 @@ In your main application file (e.g., `App.jsx`), wrap your application with the 
 
 ```jsx
 // App.jsx
-import { ScrollLockProvider } from "@yoojinyoung/useScrollLock";
+import { ScrollLockProvider } from "@yoojinyoung/usescrolllock";
 
 function App() {
   return (
@@ -41,7 +41,7 @@ In any component where you want to control the scroll lock, use the `useScrollLo
 ```jsx
 // SomeComponent.jsx
 import { useEffect } from "react";
-import { useScrollLock } from "@yoojinyoung/useScrollLock";
+import { useScrollLock } from "@yoojinyoung/usescrolllock";
 
 function SomeComponent() {
   const { lock, release, isScrollLocked } = useScrollLock();
